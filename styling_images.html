@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 26</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center; 
+            justify-content: space-around;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .img-left {
+            width: 33%;
+            height: 300px;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+
+        .img-middle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            align-self: flex-start;
+            border: 1px solid #333333; 
+            
+            padding: 3px; 
+            
+            background-color: #ffffff; 
+        }
+
+        .img-right {
+            width: 33%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://picsum.photos/id/1018/800/800" class="img-left" alt="Left">
+        <img src="https://picsum.photos/id/1015/400/400" class="img-middle" alt="Middle">
+        <img src="https://picsum.photos/id/1018/800/800" class="img-right" alt="Right">
+    </div>
+</body>
+</html>
