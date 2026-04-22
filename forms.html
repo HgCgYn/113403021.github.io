@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        .window-frame {
+            width: 496px;       
+            height: 350px;
+            border: 1px solid #eaeaea;
+            background-color: #ffffff;
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+
+        .window-frame.scrollable {
+            overflow-y: auto;
+        }
+
+        .header {
+            height: 35px;
+            border-bottom: 1px solid #eaeaea;
+            background-color: #f6f6f6; 
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            font-size: 13px;
+            color: #707070;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .spec-button {
+            position: absolute;
+            right: 18px;
+            height: 22px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            border: 1px solid #2f2f2f;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #2f2f2f;
+            padding: 0 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .content-area {
+            padding-left: 20px; 
+            padding-right: 26px; 
+            padding-top: 20px;
+        }
+
+        .image-placeholder {
+            width: 450px;
+            height: 240px;
+            background-color: #ffcc80; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .info-group {
+            margin-top: 10px; 
+            display: none;
+        }
+
+        .window-frame.scrollable .info-group {
+            display: block;
+        }
+
+        .info-item {
+            color: #707070;
+            font-size: 13px;
+            margin-bottom: 6px; 
+            word-break: break-all; 
+            line-height: 1.4;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 20px;
+    </style>
+</head>
+<body>
+
+    <div class="window-frame" id="myWindow">
+        
+        <div class="header">
+            預覽
+            <button class="spec-button" id="toggleBtn">查看資訊</button>
+        </div>
+
+        <div class="content-area">
+            <div class="image-placeholder">
+                Default 450x240
+            </div>
+            
+            <div class="info-group">
+                <div class="info-item">修改日期：2017/10/12</div>
+                <div class="info-item">類別：JPG</div>
+                <div class="info-item">大小：466.97KB</div>
+                <div class="info-item">路徑：\\designcenter.qnap.com.tw\DesignCenter\PM・RD 請進入\WEB\Stations\A_Image2PDF\v2\sample</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('toggleBtn');
+        const windowFrame = document.getElementById('myWindow');
+
+        btn.addEventListener('click', function() {
+            windowFrame.classList.toggle('scrollable');
+
+            if (windowFrame.classList.contains('scrollable')) {
+                btn.textContent = '收起資訊';
+            } else {
+                btn.textContent = '查看資訊';
+                windowFrame.scrollTop = 0; 
+            }
+        });
+    </script>
+
+</body>
+</html>
