@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 30</title>
+    <style>
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            font-family: serif;
+        }
+        #myText {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="myText">Hello</div>
+        <button id="myButton">Button</button>
+    </div>
+
+    <script>
+        const textObj = document.getElementById('myText');
+        const btnObj = document.getElementById('myButton');
+
+        btnObj.addEventListener('mouseover', function() {
+            textObj.style.color = 'magenta';
+        });
+
+        btnObj.addEventListener('click', function() {
+            textObj.innerText = 'Mouse Click';
+            textObj.style.color = 'magenta';
+        });
+    </script>
+
+</body>
+</html>
