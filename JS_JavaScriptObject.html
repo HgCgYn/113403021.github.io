@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 35</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 600px;
+        }
+        .output-box {
+            background-color: #f4f4f4;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>1. List of All Properties:</h3>
+    <div id="properties-output" class="output-box"></div>
+
+    <h3>2. Object After Deleting 'age':</h3>
+    <div id="object-output" class="output-box"></div>
+
+    <script>
+        var Person = {
+            firstName: "Tony",
+            lastName: "Lee",
+            age: 50,
+            eyeColor: "Blue"
+        };
+
+        var properties = Object.keys(Person);
+        document.getElementById("properties-output").innerText = properties.join(", ");
+
+        delete Person.age;
+
+        var updatedObjectString = JSON.stringify(Person, null, 2);
+        document.getElementById("object-output").innerText = updatedObjectString;
+    </script>
+
+</body>
+</html>
