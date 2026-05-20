@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 37</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 400px;
+        }
+        input, button {
+            padding: 5px;
+            margin-top: 10px;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Circle Properties</h2>
+    <p>Enter a radius to calculate the circumference and area.</p>
+
+    <label for="radiusInput">Radius:</label>
+    <input type="number" id="radiusInput" placeholder="e.g., 5">
+    <button onclick="runCalculations()">Calculate</button>
+
+    <div id="output" class="result-box">
+        Waiting for input...
+    </div>
+
+    <script>
+
+        function calcCircumfrence(radius) {
+            const circumference = 2 * Math.PI * radius;
+            const outputString = `The circumference is ${circumference.toFixed(2)}`;
+            console.log(outputString);
+            return outputString;
+        }
+
+        function calcArea(radius) {
+            const area = Math.PI * (radius ** 2);
+            const outputString = `The area is ${area.toFixed(2)}`;
+            console.log(outputString);
+            return outputString;
+        }
+
+        function runCalculations() {
+            const radiusValue = parseFloat(document.getElementById('radiusInput').value);
+            const outputDiv = document.getElementById('output');
+
+            if (isNaN(radiusValue) || radiusValue <= 0) {
+                outputDiv.innerText = "Please enter a valid positive number.";
+                return;
+            }
+
+            const circumResult = calcCircumfrence(radiusValue);
+            const areaResult = calcArea(radiusValue);
+
+            outputDiv.innerHTML = `${circumResult} <br> ${areaResult}`;
+        }
+    </script>
+</body>
+</html>
